@@ -24,7 +24,7 @@
 	{#if params === 'register'}
 		<Register registerForm={data.registerForm} />
 	{:else if params === 'forgot-pwd'}
-		<ForgotPwd />
+		<ForgotPwd forgotPwdForm={data.forgotPwdForm} />
 	{:else}
 		<Login loginForm={data.loginForm} />
 	{/if}
