@@ -38,7 +38,7 @@
 	<form action="?/loginEvent" method="POST" use:enhance class="flex w-full max-w-sm flex-col gap-4">
 		<div class="mb-4 grid gap-2">
 			<h1 class="text-4xl font-bold">Log in</h1>
-			<p class="text-sm text-muted-foreground">Log in to your account to continue</p>
+			<p class="text-sm text-muted-foreground">Log in to your account to track your health</p>
 		</div>
 
 		<Form.Field {form} name="email">

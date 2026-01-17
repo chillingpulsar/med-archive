@@ -22,7 +22,7 @@
 	</secttion>
 
 	{#if params === 'register'}
-		<Register />
+		<Register registerForm={data.registerForm} />
 	{:else if params === 'forgot-pwd'}
 		<ForgotPwd />
 	{:else}
