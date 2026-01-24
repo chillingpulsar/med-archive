@@ -34,7 +34,7 @@
 	const { form: formData, enhance, submitting, delayed } = form;
 </script>
 
-<section class="flex flex-col items-center justify-center">
+<section class="flex flex-col items-center justify-center p-4">
 	<form action="?/loginEvent" method="POST" use:enhance class="flex w-full max-w-sm flex-col gap-4">
 		<div class="mb-4 grid gap-2">
 			<h1 class="text-4xl font-bold">Log in</h1>

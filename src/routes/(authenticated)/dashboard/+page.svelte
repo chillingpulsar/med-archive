@@ -1,4 +1,10 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import { getContentHeaderCTX } from '$lib/components/externals/app-sidebar/components/content-header/state.svelte';
+
+	const contentHeaderState = getContentHeaderCTX();
+
+	contentHeaderState.title = 'Dashboard';
 </script>
 
 <main class="flex flex-col gap-4">
