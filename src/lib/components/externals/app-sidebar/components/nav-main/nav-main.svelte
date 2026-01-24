@@ -1,12 +1,14 @@
 <script lang="ts">
 	import IconCirclePlus from '@lucide/svelte/icons/circle-plus';
-	import IconMail from '@lucide/svelte/icons/mail';
-	import { Button } from '$lib/components/internals/button/index';
 	import * as Sidebar from '$lib/components/internals/sidebar/index';
 	import Darkmode from '$lib/components/externals/darkmode/darkmode.svelte';
+	import { goto } from '$app/navigation';
+	import { getContentHeaderCTX } from '$lib/components/externals/app-sidebar/components/content-header/state.svelte';
 
 	let { items }: { items: { title: string; url: string; icon?: typeof IconCirclePlus }[] } =
 		$props();
+
+	const contentHeaderState = getContentHeaderCTX();
 </script>
 
 <Sidebar.Group>
@@ -20,19 +22,18 @@
 					<IconCirclePlus />
 					<span>Quick New Record</span>
 				</Sidebar.MenuButton>
-				<!-- <Button
-					size="icon"
-					class="size-8 group-data-[collapsible=icon]:opacity-0"
-					variant="outline"
-				>
-					<Darkmode />
-				</Button> -->
+
 				<Darkmode />
 			</Sidebar.MenuItem>
 		</Sidebar.Menu>
 		<Sidebar.Menu>
 			{#each items as item (item.title)}
-				<Sidebar.MenuItem>
+				<Sidebar.MenuItem
+					onclick={async () => {
+						contentHeaderState.title = item.title;
+						await goto(item.url);
+					}}
+				>
 					<Sidebar.MenuButton tooltipContent={item.title}>
 						{#if item.icon}
 							<item.icon />

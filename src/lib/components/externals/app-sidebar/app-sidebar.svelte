@@ -17,12 +17,12 @@
 		navMain: [
 			{
 				title: 'Dashboard',
-				url: '#',
+				url: '/dashboard',
 				icon: IconChartColumnBig
 			},
 			{
 				title: 'Records',
-				url: '#',
+				url: '/records',
 				icon: IconNotebookText
 			}
 		],

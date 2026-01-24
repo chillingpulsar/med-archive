@@ -2,6 +2,11 @@
 	import * as Sidebar from '$lib/components/internals/sidebar/index';
 	import AppSidebar from '$lib/components/externals/app-sidebar/app-sidebar.svelte';
 	import ContentHeader from '$lib/components/externals/app-sidebar/components/content-header/content-header.svelte';
+	import { mountContentHeaderCTX } from '$lib/components/externals/app-sidebar/components/content-header/state.svelte';
+
+	let { children } = $props();
+
+	mountContentHeaderCTX();
 </script>
 
 <Sidebar.Provider
@@ -11,7 +16,7 @@
 	<Sidebar.Inset class="min-w-0 border">
 		<ContentHeader />
 		<div class="flex flex-col gap-4 p-4 md:p-6">
-			<h1>Hello World</h1>
+			{@render children?.()}
 		</div>
 	</Sidebar.Inset>
 </Sidebar.Provider>
