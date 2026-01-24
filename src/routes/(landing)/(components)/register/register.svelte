@@ -40,7 +40,7 @@
 	});
 </script>
 
-<section class="flex flex-col items-center justify-center">
+<section class="flex flex-col items-center justify-center p-4">
 	<form
 		action="?/registerEvent"
 		method="POST"
